@@ -1,0 +1,50 @@
+{
+  "entities": {
+    "AppProject": {
+      "title": "AppProject",
+      "description": "Registered application project in BigMA Dev",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "key": { "type": "string" },
+        "description": { "type": "string" },
+        "color": { "type": "string" },
+        "version": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "BacklogItem": {
+      "title": "BacklogItem",
+      "description": "Task, bug fix, or feature item in the backlog",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "appId": { "type": "string" },
+        "code": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "type": { "type": "string" },
+        "priority": { "type": "string" },
+        "status": { "type": "string" },
+        "estimatedHours": { "type": "number" },
+        "spentHours": { "type": "number" },
+        "dueDate": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "appId", "title", "status"]
+    }
+  },
+  "firestore": {
+    "apps": {
+      "schema": "AppProject",
+      "description": "Collection of application projects"
+    },
+    "tasks": {
+      "schema": "BacklogItem",
+      "description": "Collection of backlog tasks"
+    }
+  }
+}

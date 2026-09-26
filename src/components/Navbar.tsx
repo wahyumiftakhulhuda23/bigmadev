@@ -22,6 +22,7 @@ interface NavbarProps {
   onOpenNotifications: () => void;
   soundEnabled: boolean;
   onToggleSound: () => void;
+  isCloudConnected?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -36,6 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenNotifications,
   soundEnabled,
   onToggleSound,
+  isCloudConnected = true,
 }) => {
   const unreadCount = notifications.filter((n) => !n.read).length;
   const overdueCount = notifications.filter((n) => n.type === 'overdue').length;
@@ -60,6 +62,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </span>
                 <span className="hidden sm:inline-block text-[11px] font-mono text-slate-400">
                   tracker
+                </span>
+                <span className="hidden xl:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/70 border border-emerald-800/60 px-1.5 py-0.5 rounded-full ml-1 font-medium">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Realtime Cloud</span>
                 </span>
               </div>
             </button>
