@@ -1,0 +1,6 @@
+{
+  "name": "BigMA Dev - Task & Bug Tracker",
+  "description": "Aplikasi manajemen tugas dan backlog pengembangan aplikasi untuk developer dengan prioritas, estimasi waktu, notifikasi tenggat waktu, dan dashboard progres visual.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
